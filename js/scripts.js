@@ -142,6 +142,16 @@ function loadterms() {
     $('#terms').load('html/terms.html', startupscripts);
 }
 
+function showall(e) {
+   // console.log("showall",e)
+   $(".offyear").removeClass("offyear");
+
+function hideall(e) {
+    $(".hideable").addClass("offyear")
+}
+
+}
+
 function startupscripts() {
     $(".course-menu").html(makeCoursesMenu(courses));
     updateReqsList(reqs);
@@ -149,4 +159,6 @@ function startupscripts() {
     $('body').on('click', '.close', removeCourse);
     $('body').on('change', '#cohort', updateCohort);
     $('body').on('click', '#importclasslist', importClassList);
+    $('body').on('click', '#showall', showall);
+
 }
